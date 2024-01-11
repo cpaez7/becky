@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Becky</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alkalami&family=Josefin+Sans&family=Roboto+Condensed&display=swap"
+    rel="stylesheet">
+  <script src="script.js"></script>
+  <script language="JavaScript">
+    function mueveReloj() {
+      momentoActual = new Date()
+      hora = momentoActual.getHours()
+      minuto = momentoActual.getMinutes()
+      segundo = momentoActual.getSeconds()
+
+      horaImprimible = hora + " : " + minuto + " : " + segundo
+
+      document.form_reloj.reloj.value = horaImprimible
+
+      setTimeout("mueveReloj()", 1000)
+    }
+  </script>
+  <link rel="shortcut icon" href="./media/icon.png">
+</head>
+
+<body onload="mueveReloj()">
+  <h1 class="h1">Esta página te dice si ya regresó mi tía Becky</h1>
+  <p class="hora">Hora actual:</p>
+  <form name="form_reloj">
+    <input type="text" name="reloj" size="10"
+      style="background-color : Black; color : White; font-family : Verdana, Arial, Helvetica; font-size : 8pt; text-align : center;"
+      onfocus="window.document.form_reloj.reloj.blur()">
+    <p class="estado">Ya se fueron, duraron menos que la peste de un pedo 😔</p>
+  </form>
+
+  <audio class="audio" src="golden.mp3" controls>
+    Your browser does not support the <code>audio</code> element.
+  </audio>
+
+  <a href="becky2.0/indexdark.html" class="luz"><br>Apaga la luz</a>
+  
+</body>
+
+</html>
